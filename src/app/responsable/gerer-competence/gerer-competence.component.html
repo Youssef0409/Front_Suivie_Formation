@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+
+
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <body>
+      <div class="container-fluid">
+        <div class="d-flex page__box p-3 mt-2" style="color: azure">Liste des Compétences</div>
+      
+         
+            <!-- Contenu de la colonne 2 -->
+    <br>
+            
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <h5 class="card-title">Gestion Des Compétences<span class="text-muted fw-normal ms-2"></span></h5>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
+                    <div>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a  class="nav-link" data-bs-toggle="tooltip" data-bs-placement="top" title="List"><i class="bx bx-list-ul"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-current="page"  class="router-link-active router-link-exact-active nav-link active" data-bs-toggle="tooltip" data-bs-placement="top" title="Grid"><i class="bx bx-grid-alt"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                    <div class="dropdown">
+                        <a class="btn btn-link text-muted py-1 font-size-16 shadow-none dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" >Action</a></li>
+                            <li><a class="dropdown-item" >Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6" *ngFor="let dataitem of ListCollab">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dropdown float-end">
+                            <a class="text-muted dropdown-toggle font-size-16" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" (click)="add(dataitem.id_user)" >Add</a></div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
+                            <div class="flex-1 ms-3">
+                                <h5 class="font-size-16 mb-1"><a  class="text-dark">{{dataitem.nom}} {{dataitem.prenom}}</a></h5>
+                                <span class="badge badge-soft-success mb-0">{{dataitem.niveau}}</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 pt-1" *ngFor="let competence of dataitem.competences">
+                            <span class="badge badge-soft-primary mb-0">{{competence.nom}}</span>  &nbsp; <button class="deleteButton" (click)="supprimer(dataitem.id_user,competence.id)">-</button>
+                     
+                        </div>
+                    <!--    <div class="d-flex gap-2 pt-4">
+                            <button type="button" class="btn btn-primary btn-sm w-50" (click)="add(dataitem.id_user)"><i class="bx bx-message-square-dots me-1"></i> Ajouter</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            
+          
+         
+           
+           
+           
+            
+        </div>
+       
+        
+    </div>
+
+
+
+
+
+
+
+            </div>  </body>
+
+     
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

@@ -1,0 +1,59 @@
+<div class="dialog-container">
+    <h1>Ajouter Collaborateur</h1>
+    <form class="form-container"(ngSubmit)="register()">
+     
+        
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>First name</mat-label>
+          <input matInput type="text"  [(ngModel)]="registerRequest.firstname" name="firstname" required>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Last name</mat-label>
+          <input matInput type="text"  [(ngModel)]="registerRequest.lastname" name="lastname" required>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email"   [(ngModel)]="registerRequest.email"  name="email" required>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password"    [(ngModel)]="registerRequest.password" name="password"   required>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Date de naissance</mat-label>
+          <input matInput type="date"    [(ngModel)]="registerRequest.naissance" name="naissance"   required>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Specialite</mat-label>
+          <input matInput type="text"       [(ngModel)]="registerRequest.diplome" name="diplome" required>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Niveau</mat-label>
+          <input matInput type="text"       [(ngModel)]="registerRequest.niveau" name="niveau" required>
+        </mat-form-field>
+      </div>
+     
+      <div class="dialog-actions">
+        <button type="button" class="btn-cancel" (click)="dialogRef.close()">Fermer</button>
+
+        <button mat-raised-button color="primary" type="submit" class="btn-submit" >Enregistrer</button>
+      </div>
+   </form>
+  </div>
+  

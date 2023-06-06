@@ -1,0 +1,37 @@
+<div class="dialog-container">
+    <h1>Ajouter une Compétence</h1>
+    <form class="form-container" [formGroup]="Reactiveform" (ngSubmit)="getReservFormData()">
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Id Compétence</mat-label>
+          <input matInput type="number" formControlName="id">
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Nom Compétence</mat-label>
+          <input matInput type="text" formControlName="nom" required>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Lien</mat-label>
+          <input matInput type="text" formControlName="lien" required>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Score</mat-label>
+          <input matInput type="number" formControlName="score" required>
+        </mat-form-field>
+      </div>
+     
+      
+      <div class="dialog-actions">
+        <button type="button" class="btn-cancel" (click)="dialogRef.close()">Fermer</button>
+        <button mat-raised-button color="primary" type="submit" class="btn-submit" *ngIf="editmode">Modifier</button>
+        <button mat-raised-button color="primary" type="submit" class="btn-submit" *ngIf="!editmode">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+  

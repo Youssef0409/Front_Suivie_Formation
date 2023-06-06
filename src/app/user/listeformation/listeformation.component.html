@@ -1,0 +1,64 @@
+<div class="hero"><app-user-navbar></app-user-navbar><br><br>
+
+
+   
+
+  <div class="flip-card-row">
+
+
+<div class="flip-card-container" style="--hue: 220" *ngFor="let dataitem of ListFormations">
+  <div class="flip-card" >
+
+    <div class="card-front">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="../assets/test.jpg" alt="Brohm Lake">
+        <figcaption>{{dataitem.titre}}</figcaption>
+      </figure>
+
+      <ul>
+        <li>Date_formation :{{dataitem.date_formation}}</li>
+        <li>Specialite :{{dataitem.specialite}}</li>
+        <li>Niveau : {{dataitem.niveau}}</li>
+        <li>Description : {{dataitem.description}}</li>
+        <li>Heure_formation : {{dataitem.heure_formation}}</li>
+      </ul>
+    </div>
+
+    <div class="card-back">
+      <figure>
+        <div class="img-bg"></div>
+        <img src="../assets/image/f.jpeg" alt="Brohm Lake">
+      </figure>
+
+      <button (click)="createDemandeFormation(dataitem.idformation)">Demander La Formation</button>
+
+      <div class="design-container">
+        <span class="design design--1"></span>
+        <span class="design design--2"></span>
+        <span class="design design--3"></span>
+        <span class="design design--4"></span>
+        <span class="design design--5"></span>
+        <span class="design design--6"></span>
+        <span class="design design--7"></span>
+        <span class="design design--8"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+      
+
+
+
+
+         
+            
+          
+     
+  
+  

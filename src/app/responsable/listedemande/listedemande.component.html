@@ -1,0 +1,141 @@
+
+
+
+<header>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</header>
+   
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <!-- <mat-drawer mode="side" opened="true"> -->
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+<div class="container-fluid page">
+ <div class="d-flex page__box p-3 mt-2" style="color: azure">Liste des demandes</div>
+
+ 
+
+ <form action="">
+   <input type="search" required>
+   <i class="fa fa-search"></i>
+   <a class="search" href="javascript:void(0)" id="clear-btn" (click)="clearInput()">Clear</a>
+ </form> <br>
+
+
+ 
+
+
+ <div class="content">
+  <div class="container">
+      
+      <!-- end row -->
+      <div class="row" >
+          <div class="col-lg-4" *ngFor="let dataitem of ListDemande">
+              <div class="text-center card-box">
+                  <div class="member-card pt-2 pb-2">
+                      <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                      <div class="">
+                          <h4>{{dataitem.collaborateur.prenom}} {{dataitem.collaborateur.nom}}</h4>
+                          <p class="text-muted">Formation Demandée <span>| </span><span><a href="#" class="text-pink">{{dataitem.formation.titre}}</a></span></p>
+                      </div>
+                      <ul class="social-links list-inline">
+                          <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                          <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa-brands fa-linkedin"></i></a></li>
+                          <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa-brands fa-twitter"></i></a></li>
+                      </ul>
+
+                      <button type="button" class="btn btn-primary mt-3 btnn-rounded waves-effect w-md waves-light buttonn" (click)="validerdemande(dataitem.iddemande)">Accepter</button> &nbsp;
+
+                      <button type="button" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light" (click)="Annulerdemande(dataitem.iddemande)">Refuser</button> 
+
+                      
+
+                      
+
+
+                      <div class="mt-4">
+                          <div class="row">
+                              <div class="col-5">
+                                  <div class="mt-3">
+                                      <h4>{{dataitem.formation.specialite}}</h4>
+                                      <p class="mb-0 text-muted">Spécilaité</p>
+                                  </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="mt-3">
+                                      <h4>{{dataitem.formation.niveau}}</h4>
+                                      <p class="mb-0 text-muted">Niveau</p>
+                                  </div>
+                              </div>
+                              <div class="col-3">
+                                  <div class="mt-3">
+                                      <h4>{{dataitem.formation.description}}</h4>
+                                      <p class="mb-0 text-muted">Description</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5">
+                            <div class="mt-3">
+                                <h4>{{dataitem.formation.date_formation | date: 'yyyy-MM-dd'}}</h4>
+                                <p class="mb-0 text-muted">Date formation</p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mt-3">
+                                <h4>{{dataitem.heureFormation | date: 'HH:mm'}}</h4>
+                                <p class="mb-0 text-muted">Heure formation</p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mt-3">
+                                <h4>{{dataitem.formation.niveau}}</h4>
+                                <p class="mb-0 text-muted">Niveau</p>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+      </div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+</div>
+</mat-drawer-content>
+</mat-drawer-container>
+  
+  
+  
+  
+
+  
+  
+  
+
+        
+  
+  
+  
+  
+           
+         
+    

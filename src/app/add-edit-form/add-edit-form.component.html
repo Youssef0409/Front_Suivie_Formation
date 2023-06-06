@@ -1,0 +1,91 @@
+<div class="dialog-container">
+  <h1>Ajouter une Formation</h1>
+  <form class="form-container" [formGroup]="Reactiveform" (ngSubmit)="getReservFormData()">
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Id Formation</mat-label>
+        <input matInput type="number" formControlName="idformation">
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Titre</mat-label>
+        <input matInput type="text" formControlName="titre" required>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput type="text" formControlName="description" required>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Niveau</mat-label>
+        <mat-select formControlName="niveau" required>
+          <mat-option value="Licence">Licence</mat-option>
+          <mat-option value="Master">Master</mat-option>
+          <mat-option value="Cycle">Cycle d'ingénieur</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Specialite</mat-label>
+        <mat-select formControlName="specialite" required>
+          <mat-option value="Génie_Logiciel">Génie Logiciel</mat-option>
+          <mat-option value="Data_Science">Data Science</mat-option>
+          <mat-option value="Cloud">IOT Cloud-Cybersécurity</mat-option>
+          <mat-option value="RealiteV">Réalité Virtuelle-Gaming</mat-option>
+          <mat-option value="informatique_mutimedia">Informatique et Multimédia</mat-option>
+          <mat-option value="Management">Management</mat-option>
+          <mat-option value="Supply_Chain_Management">Supply Chain And Management</mat-option>
+          <mat-option value="Transformation_Digitale">Transformation Digitale</mat-option>
+          <mat-option value="Marketing_Digitale">Marketing Digitale & Data Analytics</mat-option>
+          <mat-option value="international_Management">International Management en Management</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Date Formation</mat-label>
+        <input matInput type="date" formControlName="date_formation" required>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <label>Heure Formation</label>
+      <timepicker formControlName="heure_formation"></timepicker>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Cout</mat-label>
+        <input matInput type="number" formControlName="cout" required>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Quota Max</mat-label>
+        <input matInput type="number" formControlName="quota_max" required>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Nombre de places</mat-label>
+        <input matInput type="number" formControlName="nbre_places" required>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Lien</mat-label>
+        <input matInput type="text" formControlName="lien" required>
+      </mat-form-field>
+    </div>
+   
+    
+    <div class="dialog-actions">
+      <button type="button" class="btn-cancel" (click)="dialogRef.close()">Fermer</button>
+      <button mat-raised-button color="primary" type="submit" class="btn-submit" *ngIf="editmode">Modifier</button>
+      <button mat-raised-button color="primary" type="submit" class="btn-submit" *ngIf="!editmode">Enregistrer</button>
+    </div>
+  </form>
+</div>

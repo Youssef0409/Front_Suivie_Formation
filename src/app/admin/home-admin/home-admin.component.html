@@ -1,0 +1,118 @@
+
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head><link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+ 
+    <div class="sidebar close">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus"></i>
+        <span class="logo_name">Admin</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/admin/home">
+            <i class="bx bx-grid-alt"></i>
+            <span class="link_name">Home</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" routerLink="/admin/home">Home</a></li>
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a routerLink="/admin/planformation">
+            <i class="bx bx-line-chart"></i>
+            <span class="link_name">Chart</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" routerLink="/admin/planformation">Chart</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <div class="iocn-link">
+            <a >
+              <i class="bx bx-collection"></i>
+              <span class="link_name">Gestion User</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name">Gestion User</a></li>
+            <li><a routerLink="/admin/gestionResponsable">Gestion Responsable</a></li>
+            <li><a routerLink="/admin/gestionCollaborateur">Gestion  Collaborateur</a></li>
+            
+          </ul>
+        </li>
+       
+        <li>
+          <a >
+            <i class="bx bx-cog"></i>
+            <span class="link_name">Setting</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" >Setting</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="profile-details">
+            <div class="profile-content">
+              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" >
+            </div>
+            <div class="name-job">
+              <div class="profile_name">{{nom}}</div>
+              <div class="job">Admin</div>
+            </div>
+            <i class="bx bx-log-out" (click)="logout()"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="home-content">
+        <i class="bx bx-menu"></i>
+        <span class="text">Home</span>
+      </div>
+
+
+<!-------Code lena---------><!----------------Code lena------------><!--------------Code lena------------>
+
+
+  
+  <div class="row small">
+    <div class="imagegroup" style="animation-delay: 1s;">
+      <img src="./assets/image/Angular.png" width="300" height="342" alt="">
+      <img src="./assets/image/d.png" width="300" height="342" alt="">
+      <img src="./assets/image/aa.jpg" width="300" height="342" alt="">
+      <img src="./assets/image/d.jpg" width="300" height="342" alt="">
+      <img src="./assets/image/c.jpg" width="300" height="342" alt="">
+      <img src="./assets/image/f.jpg" width="300" height="342" alt="">
+
+      <img src="./assets/image/g.jpg" width="300" height="342" alt="">
+      <img src="./assets/image/aa.jpg" width="300" height="342" alt="">
+      <img src="./assets/image/n.jpg" width="300" height="342" alt="">
+      
+    </div>
+  </div>
+  
+  
+  <div class="row large">
+     <div class="imagegroup" style="border:2px solid white">
+      <img src="./assets/image/a.png" width="800" height="340" alt="">
+      <img src="./assets/image/k.png" width="1024" height="340" alt="">
+     </div>
+  </div>
+
+
+
+<!------------------Code lena--------------><!-----------------Code lena---------------><!-------------Code lena-------------------->
+
+</section> 
+
+</html>

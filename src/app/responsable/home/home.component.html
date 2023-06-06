@@ -1,0 +1,33 @@
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+  <div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Home</div>
+
+
+
+    <!-- 3D Slideshow Section --> 
+<section id="slideshow">
+  <div class="entire-content">
+    <div class="content-carrousel">
+      <figure class="shadow"><img src="../assets/circle/1.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/2.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/3.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/4.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/5.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/6.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/7.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/2.jpg"/></figure>
+      <figure class="shadow"><img src="../assets/circle/4.jpg"/></figure>
+</div>
+</div>
+</section>
+    
+  </div>
+  </mat-drawer-content>
+  </mat-drawer-container>

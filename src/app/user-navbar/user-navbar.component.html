@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+    <!-- Creadted by Coding Pakistan Youtube Channel -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Drop-Down Profile Menu - Coding Pakistan</title>
+
+</head>
+<body>
+
+
+    
+        <nav>
+            <h2 class="logo">Sesame</h2>
+            <ul>
+                <li> <a routerLink="/user/home"> Home </a></li>
+                <li> <a routerLink="/user/listeformation"> Formations </a></li>
+                <li> <a routerLink="/user/mesformations"> Mes Formation </a></li>
+               <!--- <li> <a routerLink="/user/profile"> Contact </a></li>   -->
+            </ul>
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="user-pic" (click)="toggleMenu()">
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                        <h3> {{prenom}} {{nom}} </h3>
+                    </div>
+                    <hr>
+
+                    <a  class="sub-menu-link">
+                        <img src="../assets/images/profile.png">
+                        <p (click)="goToListeFormation()"> Edit Profile</p>
+                        <span> > </span>
+                    </a>
+
+                    <a  class="sub-menu-link">
+                        <img src="../assets/images/setting.png">
+                        <p>Settings and Privacy</p>
+                        <span> > </span>
+                    </a>
+
+                    <a  class="sub-menu-link">
+                        <img src="../assets/images/help.png">
+                        <p>Help & Support</p>
+                        <span> > </span>
+                    </a>
+
+                    <a  class="sub-menu-link">
+                        <img src="../assets/images/logout.png">
+                        <p  (click)="logout()">Logout</p>
+                        <span> > </span>
+                    </a>
+
+                </div>
+            </div>
+
+        </nav>
+    
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
+</body>
+
+</html>

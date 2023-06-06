@@ -1,0 +1,24 @@
+<div class="dialog-container">
+    <h1>Ajouter une Formation</h1>
+    <form class="form-container" [formGroup]="Reactiveform" (ngSubmit)="getReservFormData()">
+     
+     
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>Niveau</mat-label>
+          <mat-select formControlName="competence" required >
+            <mat-option *ngFor="let competence of ListCompetences" [value]="competence.id">{{ competence.nom }}</mat-option>
+        
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+      
+      
+      <div class="dialog-actions">
+        <button type="button" class="btn-cancel" (click)="dialogRef.close()">Fermer</button>
+        
+        <button mat-raised-button color="primary" type="submit" class="btn-submit" >Enregistrer</button>
+      </div>
+    </form>
+  </div>

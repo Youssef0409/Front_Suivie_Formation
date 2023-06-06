@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "../node_modules/alertifyjs/build/css/alertify.css";
+@import "../node_modules/alertifyjs/build/css/themes/bootstrap.min.css";
+@import "../node_modules/alertifyjs//build/css/themes/default.min.css";
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+.mat-dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
