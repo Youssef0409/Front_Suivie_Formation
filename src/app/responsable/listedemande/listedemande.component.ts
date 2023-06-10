@@ -17,7 +17,7 @@ import { AdminserviceService } from 'src/app/services/adminservice.service';
 })
 export class ListedemandeComponent {
 
- 
+
 
   clearInput() {
     const input = document.querySelector('input[type="search"]') as HTMLInputElement;
@@ -36,7 +36,7 @@ export class ListedemandeComponent {
   ngOnInit(): void {
     this.GetAllDeamandeFormations();
   }
-  constructor(private service: AdminserviceService){}
+  constructor(private snackBar: MatSnackBar,private service: AdminserviceService){}
   GetAllDeamandeFormations(){
     this.service.getAllDeamandeFormationEnCours().subscribe(reps=>{
 this.ListDemande=reps
@@ -44,17 +44,39 @@ this.ListDemande=reps
   }
   validerdemande(id:number){
     this.service.validerDemandeFormation(id).subscribe(res=>{
-      alertifyjs.success('Bravo! Demande est validée avec succès');
+      this.showSuccessMessage();
       this.GetAllDeamandeFormations();
     })
 
   }
   Annulerdemande(id:number){
     this.service.AnnulerrDemandeFormation(id).subscribe(res=>{
-      alertifyjs.success("Bravo demande est annuléé");
+     this.showAnnulerMessage();
       this.GetAllDeamandeFormations();
     })
 
   }
+
+
+
+  showSuccessMessage() {
+    const config = new MatSnackBarConfig();
+    config.duration = 3000; // Duration in milliseconds
+    config.horizontalPosition = 'center'; // Set the horizontal position to center
+    config.verticalPosition = 'top'; // Set the vertical position to top
+  
+    this.snackBar.open('Bravo! Demande est validée avec succès', 'Close', config);
+  }
+
+  showAnnulerMessage() {
+    const config = new MatSnackBarConfig();
+    config.duration = 3000; // Duration in milliseconds
+    config.horizontalPosition = 'center'; // Set the horizontal position to center
+    config.verticalPosition = 'top'; // Set the vertical position to top
+  
+    this.snackBar.open('Bravo demande est annuléé', 'Close', config);
+  }
+
+  
 
 }
